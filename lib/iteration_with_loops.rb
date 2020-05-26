@@ -7,8 +7,26 @@ array_of_daily_temperatures = [
   [25, 29, 30, 36, 39, 45, 49, 50, 52, 57, 58, 59, 60, 66, 65, 59, 54, 49, 45, 40, 36, 30, 26, 24],
   [30, 36, 38, 39, 40, 45, 47, 49, 50, 59, 60, 60, 65, 63, 61, 56, 49, 43, 40, 39, 35, 32, 23, 22],
 ]
-def find_min_in_nested_arrays(src)
+
+def find_min_in_nested_arrays(array)
   # src will be an array of arrays of integers
   # Produce a new Array that contains the smallest number of each of the nested arrays
-
+ 
+  row_index = 0 
+  new_array = []
+  while row_index < array.count do 
+    min_temprature = 0 
+    temporary_min = 10000
+    while min_temprature < array[row_index].count do
+      if array[row_index][min_temprature] < temporary_min
+      	temporary_min = array[row_index][min_temprature]
+      end
+            min_temprature += 1 
+    end
+    new_array << temporary_min
+     row_index += 1 
+  end
+  p new_array
+  
+  
 end
